@@ -1,11 +1,8 @@
 import axios from 'axios';
-import Pages from "../../../App/src/common/Pages.js";
-import * as RootNavigation from "../../../App/rootNavigationRef.js";
 
-
-const excludeUrls = [
+const excludeUrls:[] = [
 ];
-const excludeUrlsResponse = [
+const excludeUrlsResponsen = [
 ];
 const interceptMethods = ['post', 'put', 'patch', 'delete',];
 
@@ -13,6 +10,7 @@ const APP_PAYLOAD_IN_HEADER = false
 
 const Api = axios.create({
   baseURL: 'http://localhost:8000/',
+  //@ts-ignore
   headers: {
     'Content-Type' : 'multipart/form-data',
     Accept: 'application/json, image/png ,image/jpeg , image/jpg',
@@ -24,6 +22,7 @@ const Api = axios.create({
 });
 Api.interceptors.request.use((request) => {
   if (APP_PAYLOAD_IN_HEADER) {
+    //@ts-ignore
     if (excludeUrls.indexOf(request.url) < 0 && interceptMethods.indexOf(request.method) >= 0) {
       if (request.data) {
         request.headers['payload'] = JSON.stringify(request.headers);

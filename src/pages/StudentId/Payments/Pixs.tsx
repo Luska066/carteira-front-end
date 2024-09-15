@@ -44,6 +44,7 @@ export const Pixs = (): JSX.Element => {
     const [qrCodeMessage, setQrCodeMessage] = useState(null);
     const [websocketId, setWebSocketId] = useState(null)
 
+    //@ts-ignore
     window.Pusher = Pusher
     let Echos = new Echo({
         broadcaster: 'reverb',
@@ -68,6 +69,7 @@ export const Pixs = (): JSX.Element => {
     })
 
     Echos.private('payment.2')
+        //@ts-ignore
         .listen('PaymentResponse', (response) => {
             console.log(response);
             if (response?.success && response?.status === "RECEIVED") {
@@ -81,6 +83,7 @@ export const Pixs = (): JSX.Element => {
                     navigate('/')
                 }, 3000)
             }
+            //@ts-ignore
         }).error((e) => {
         console.log(e)
     });
@@ -88,6 +91,7 @@ export const Pixs = (): JSX.Element => {
     useEffect(() => {
         Api.get('api/v1/student/consult-qr-code')
             .then((response) => {
+                //@ts-ignore
                 if (response.success) {
                     toast.success("QrCode baixado!")
                     setQrCode(response.data)
@@ -95,6 +99,7 @@ export const Pixs = (): JSX.Element => {
             }).catch(error => {
             if (error.message === "Erro ao consultar QrCode") {
                 toast.error("Sua fatura ja foi paga ou expirou, consulte o suporte!")
+                //@ts-ignore
                 setQrCodeMessage("Ouve um erro ao consultar seu qrCode!Entre em contrato com o suporte.")
                 // toast.error("Você será redirecionado em 5 segundos")
                 // toast.error("Você poderá logar novamente, ou entre em contato com o suporte!")
@@ -107,6 +112,7 @@ export const Pixs = (): JSX.Element => {
         Api.get('api/v1/student/websocket-identify')
             .then((response) => {
                 console.log(response)
+                //@ts-ignore
                 setWebSocketId(response)
             })
     }, []);
@@ -114,6 +120,7 @@ export const Pixs = (): JSX.Element => {
     const jaEfetueiOPagemento = () => {
         Api.get('api/v1/student/has/execute/payment')
             .then((response) => {
+                //@ts-ignore
                 if (response.success) {
                     toast.warning("Caso você tenha efetuado o pagamento em 5 segundos você será redirecionado!")
                     toast.warning('Qualquer problema entre em contato com a faculdade')

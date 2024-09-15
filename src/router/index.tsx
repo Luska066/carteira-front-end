@@ -10,7 +10,7 @@ import { RequireAuth } from "../contexts/RequireAuth";
 import { GenerationPage } from "../pages/StudentId/Generation";
 import { Login } from "../pages/StudentId/Login/Login";
 import { RequireLoggin } from "../contexts/RequireLoggin";
-import {Pix, Pixs} from "../pages/StudentId/Payments/Pixs";
+import { Pixs} from "../pages/StudentId/Payments/Pixs";
 import {DetailsPageLogged} from "../pages/StudentId/Validate/DetailsLogged";
 
 export const router = createBrowserRouter([

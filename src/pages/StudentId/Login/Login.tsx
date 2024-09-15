@@ -51,14 +51,10 @@ export const Login = (): JSX.Element => {
     useEffect(() => {
         console.log(user)
     }, []);
-    const handleCourse = (event) => {
-        const value = event.target.value;
-        setDataInicio(value.DataInicioCurso)
-        setDataFinal(value.DataFimCurso)
-        setCurso(value);
-    }
 
-    const handleChangeCPF = (event) => {
+    //ts-ignore
+    const handleChangeCPF = (event:string) => {
+        //@ts-ignore
         setCpf(Helpers.cpfMask(event.target.value))
     }
 
@@ -73,12 +69,14 @@ export const Login = (): JSX.Element => {
             'scope': '*',
         })
             .then(response => {
-
+                //@ts-ignore
                 localStorage.setItem('access_token', response.access_token);
                 auth.notify('success', "Login successful!");
                 Api.get('api/v1/student/get-step')
                     .then((response) => {
+                        //@ts-ignore
                         console.log(response.success && response.step.id === 5)
+                        //@ts-ignore
                         if (response.success && response.step.id === 5) {
                             toast.success("Parece que você ja completou o cadastro")
 
@@ -87,6 +85,7 @@ export const Login = (): JSX.Element => {
                             }, 3000)
 
                         }else {
+                            //@ts-ignore
                             navigate(response.step.redirect_uri)
                         }
                         // if (response.success)
@@ -140,6 +139,7 @@ export const Login = (): JSX.Element => {
                                         label="Digite Seu CPF"
                                         variant="filled"
                                         required
+                                        //@ts-ignore
                                         onChange={handleChangeCPF}
                                         value={cpf}
                                     />

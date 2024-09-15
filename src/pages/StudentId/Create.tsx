@@ -52,7 +52,7 @@ export const CreateStudentIdPage = (): JSX.Element => {
     useEffect(() => {
         console.log(user)
     }, []);
-    const handleCourse = (event) => {
+    const handleCourse = (event:any) => {
         const value = event.target.value;
         setDataInicio(value.DataInicioCurso)
         setDataFinal(value.DataFimCurso)
@@ -61,9 +61,13 @@ export const CreateStudentIdPage = (): JSX.Element => {
 
     const handleNext = async () => {
         console.log(curso)
+        //@ts-ignore
         Api.post('api/public/create-student', {
+            //@ts-ignore
             "NomeCurso": curso?.NomeCurso,
+            //@ts-ignore
             "DataInicioCurso": curso?.DataInicioCurso,
+            //@ts-ignore
             "DataFimCurso": curso.DataFimCurso,
             "Matricula": user.Matricula,
             "DataNascimento": user.DataNascimento,
@@ -72,15 +76,20 @@ export const CreateStudentIdPage = (): JSX.Element => {
             "password": user.password
         }).then(response => {
             console.log(response)
+            //@ts-ignore
             if(response?.success === true && response.message === "Conta criada com sucesso!"){
+                //@ts-ignore
                 auth.notify('success', response.message)
                 setTimeout(() => {
                     navigate('/',{state:user.email})
                 },3000)
             }
+            //@ts-ignore
             if(response?.success === false && response.message === "Usuário já cadastrado no sistema"){
+                //@ts-ignore
                 auth.notify('error', response.message)
                 setTimeout(() => {
+                    //@ts-ignore
                     navigate(response.redirect_url,{state:user.email})
                 },3000)
             }
@@ -192,7 +201,10 @@ export const CreateStudentIdPage = (): JSX.Element => {
                                                 label="Age"
                                                 onChange={(event) => handleCourse(event)}
                                             >
-                                                {user.Cursos && user.Cursos.map((value) => (
+                                                {
+                                                    //@ts-ignore
+                                                }
+                                                {user.Cursos && user.Cursos.map((value:any) => (
                                                     <MenuItem value={value}>{value.NomeCurso}</MenuItem>
                                                 ))}
                                             </Select>

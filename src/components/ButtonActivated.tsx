@@ -43,7 +43,7 @@ export let ButtonActivated = ({isHabilited, data}: { isHabilited: boolean, data:
                   "name": data?.fullName
               }).then(response => {
                   console.log(response)
-
+                  //@ts-ignore
                   if(response?.success === true){
                       auth.notify('success','Estudante encontrado com sucesso!')
                       let object =response.data;

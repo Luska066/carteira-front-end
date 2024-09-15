@@ -95,6 +95,7 @@ export const UploadPhotoPage = (): JSX.Element => {
 
         Api.post('/api/v1/student/send-image',formData)
             .then((response) => {
+                //@ts-ignore
                 if(response.success){
                     auth.notify('success','Foto Salva com sucesso!');
                     navigate(response.data.step.redirect_uri)

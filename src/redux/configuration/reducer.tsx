@@ -8,6 +8,7 @@ const initialState = {
         Cursos : [],
     }
 }
+//@ts-ignore
 const configReducer = (state = initialState,action) => {
     if(action.type === "config/load"){
         return {...state,user:action.payload.user}

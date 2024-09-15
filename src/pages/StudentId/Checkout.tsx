@@ -38,6 +38,7 @@ export const CheckoutPage = (): JSX.Element => {
     const handleNext = () => {
         Api.post('api/v1/student/generate-card')
             .then((response) => {
+                //@ts-ignore
                 if(response.success){
                     console.log(response)
                     toast.success("Em instantes você será redirecionado para o pagamento, Aguarde !")

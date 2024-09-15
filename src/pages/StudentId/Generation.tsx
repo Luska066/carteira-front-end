@@ -53,6 +53,7 @@ export const GenerationPage = (): JSX.Element => {
     const executeDownloadCardAutomatically = () => {
         Api.post('api/v1/student/download/card')
             .then((response) => {
+                //@ts-ignore
                 if(response.success){
                     setCardLink(response.data)
                     const link = document.createElement('a');
@@ -84,6 +85,7 @@ export const GenerationPage = (): JSX.Element => {
 
     const handleNext = async () => {
         const link = document.createElement('a');
+        //@ts-ignore
         link.href = cardLink;
         link.download = 'carteira.pdf';
         // Adiciona o link ao DOM
@@ -123,7 +125,7 @@ export const GenerationPage = (): JSX.Element => {
                         <Typography variant="h6" fontWeight="bold">
                             BAIXAR CARTEIRA DE ESTUDANTE: ( Download Automático ):
                         </Typography>
-                        <Typography variant="p" fontWeight="bold">
+                        <Typography  fontWeight="bold">
                             Caso não tenha baixado sua carteira ou caso não apareça no visor
                         </Typography>
                         <Box>

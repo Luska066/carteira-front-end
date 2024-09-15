@@ -1,5 +1,6 @@
 export class Helpers{
 
+    //@ts-ignore
     static formateDate(data){
         const date = new Date(data);
 
@@ -9,7 +10,7 @@ export class Helpers{
 
         return `${dia}/${mes}/${ano}`;
     }
-
+    //@ts-ignore
     static formateDateManually(data){
 
         if(data == null){

@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import configReducer from './configuration/reducer.tsx'
+import configReducer from './configuration/reducer'
 
 const rootReducer = combineReducers({
     configReducer
