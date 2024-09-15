@@ -1,0 +1,40 @@
+#rules-container{
+    height: 400px;
+    overflow-y: auto;
+    color:rgb(112, 109, 109)
+}
+
+
+.responsive{
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 899px) {
+    .responsive{
+        height: 100%;
+    }
+}
+
+.err{
+    font-weight: bold;
+    color: red;
+    font-size: 12px;
+}
+
+.label-min{
+    color:red;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.buttonOrganization{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}

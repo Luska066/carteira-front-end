@@ -1,0 +1,6 @@
+{
+    "users": [
+      { "id": 1, "name": "Lucas de Melo", "dataNasc": "2004-08-01","cpf":"419.949.949-05","email":"lucas.santsena@gmail.com","matricula":"858.113.735.03","data_inicio":"2021-04-01","data_final":"2025-04-01"}
+    ]
+
+}
