@@ -9,7 +9,8 @@ const interceptMethods = ['post', 'put', 'patch', 'delete',];
 const APP_PAYLOAD_IN_HEADER = false
 
 const Api = axios.create({
-  baseURL: 'http://localhost:8000/',
+  baseURL: 'http://52.91.162.243:8000/',
+  // baseURL: 'http://localhost:8000/',
   //@ts-ignore
   headers: {
     'Content-Type' : 'multipart/form-data',

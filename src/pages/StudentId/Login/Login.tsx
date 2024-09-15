@@ -62,8 +62,8 @@ export const Login = (): JSX.Element => {
         Api.post('oauth/token', {
             'grant_type': 'password',
             'client_id': '1',
-            // 'client_secret': 'Sckz3p8aTFfLl8Wf8nfLGkDoeXeAa1uerlZA8lDD',
-            'client_secret': 'j6ZG2pxzNb7BVMJ6bvqf3HIXWGHjkSXylpGL88fC',
+            //'client_secret': 'j6ZG2pxzNb7BVMJ6bvqf3HIXWGHjkSXylpGL88fC',
+            'client_secret': 'MTKkfV2PAPM2HFmlWzeWKUvyRKqndvjSAz9jnCgK',
             'username': 'lucas.santsena@gmail.com',
             'password': '123456789',
             'scope': '*',
