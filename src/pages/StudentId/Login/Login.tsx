@@ -63,7 +63,7 @@ export const Login = (): JSX.Element => {
             'grant_type': 'password',
             'client_id': '1',
             //'client_secret': 'j6ZG2pxzNb7BVMJ6bvqf3HIXWGHjkSXylpGL88fC',
-            'client_secret': 'MTKkfV2PAPM2HFmlWzeWKUvyRKqndvjSAz9jnCgK',
+            'client_secret': 'e5GJTYIDFxKgKprQG2gyPWWcn7kNfQCEhoqPjgp0',
             'username': 'lucas.santsena@gmail.com',
             'password': '123456789',
             'scope': '*',
@@ -92,13 +92,13 @@ export const Login = (): JSX.Element => {
                     })
                     .catch(error => {
                         auth.notify('error', error?.message || "Erro Desconhecido!");
-                        console.error(error);
+                        console.log(error);
                     });
 
             })
             .catch(error => {
                 auth.notify('error', error?.message || "Erro Desconhecido!");
-                console.error(error);
+                console.log(error);
             });
     };
 
